@@ -1906,6 +1906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 2043605255}
+  slotPrefab: {fileID: 173273306817680534, guid: 352eb9b5c88f04445b6d8bbd13b596fc, type: 3}
+  slotParent: {fileID: 452457281}
 --- !u!114 &1760148231
 MonoBehaviour:
   m_ObjectHideFlags: 0
