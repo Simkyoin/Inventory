@@ -5,6 +5,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public Character Player { get; private set; }
 
+    private void Start()
+    {
+        SetData(); // 이제 UIManager.Instance는 절대 null 아님
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -13,8 +17,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        SetData(); // 여기서 호출
     }
 
     private void SetData()
