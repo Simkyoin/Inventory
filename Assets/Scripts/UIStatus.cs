@@ -1,22 +1,27 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class UIStatus : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI statusText;
-    [SerializeField] private Button backButton;
-
-    private void Start()
-    {
-        backButton.onClick.AddListener(() => UIManager.Instance.OpenMainMenu());
-    }
+    [SerializeField] private TextMeshProUGUI idText;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private TextMeshProUGUI equippedItemText;
 
     public void SetCharacter(Character character)
     {
-        statusText.text =
-            $"ID: {character.ID}\n" +
-            $"Level: {character.Level}\n" +
-            $"Gold: {character.Gold}\n";
+        idText.text = $"ID: {character.ID}";
+        levelText.text = $"Level: {character.Level}";
+        goldText.text = $"Gold: {character.Gold}";
+
+        // 추가: 장착 아이템 표시
+        if (character.EquippedItem != null)
+        {
+            equippedItemText.text = $"Equipped: {character.EquippedItem.Name}";
+        }
+        else
+        {
+            equippedItemText.text = "Equipped: None";
+        }
     }
 }

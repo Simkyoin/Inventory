@@ -33,9 +33,9 @@ public class UISlot : MonoBehaviour
     public void OnClick()
     {
         GameManager.Instance.Player.Equip(item);
+        RefreshUI();
 
-        // 인벤토리 전체 새로고침
-        UIManager.Instance.UIInventory.RefreshInventoryUI();
-        UIManager.Instance.UIStatus.SetCharacter(GameManager.Instance.Player); // 상태창 갱신
+        // 상태창도 업데이트
+        UIManager.Instance.UIStatus.SetCharacter(GameManager.Instance.Player);
     }
 }
